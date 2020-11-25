@@ -1,4 +1,4 @@
-export default interface Ikey {
+interface IKey {
   SVC_NAME: string;
   PORT: number;
   DB_CLIENT: string;
@@ -7,3 +7,5 @@ export default interface Ikey {
   DB_PASSWORD: string;
   DB_DATABASE: string;
 }
+
+export default IKey;

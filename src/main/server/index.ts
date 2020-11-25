@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import routes from '../routes';
 import { errorHandler } from '../middlewares';
 import { Log } from '../../common';
+import sequelize from '../../database';
 
 class Server {
   public app: Express;
@@ -16,12 +17,23 @@ class Server {
     this.app.use(errorHandler);
   }
 
-  public start(port: number): void {
+  public async start(port: number): Promise<void> {
     this.app
       .listen(port, () => {
         Log.add.info(`Server started on port ${port}`);
       })
       .on('error', err => Log.add.error(JSON.stringify(err)));
+    this.database();
+  }
+
+  private async database(): Promise<void> {
+    try {
+      await sequelize.authenticate();
+      Log.add.info(`Database connected`);
+      await sequelize.sync();
+    } catch (err) {
+      Log.add.error(`Database error: ${err.message}`);
+    }
   }
 }
 

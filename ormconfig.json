@@ -1,0 +1,17 @@
+{
+  "name": "default",
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "username": "test",
+  "password": "test",
+  "database": "db_test",
+  "synchtonize": true,
+  "logging": false,
+  "entities": ["src/database/models/**/*.ts"],
+  "migrations": ["src/database/migrations/**/*.ts"],
+  "cli": {
+    "entitiesDir": "src/database/models",
+    "migrationsDir": "src/database/migrations"
+  }
+}

@@ -1,1 +1,1 @@
-export { postUser, getUser } from './user';
+export { postUser, getUser, putUser, deleteUser, postLoginUser } from './user';

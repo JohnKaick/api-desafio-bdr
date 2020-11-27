@@ -1,5 +1,4 @@
 import { Router, Request, Response } from 'express';
-import keys from '../../config';
 import { verifyToken, rolesAdmin } from '../middlewares';
 import {
   getUser,
@@ -15,7 +14,7 @@ const router = Router();
 router.get(
   '/',
   (req: Request, res: Response): Response =>
-    res.status(200).send({ message: `${keys.SVC_NAME} OK` }),
+    res.status(200).send({ message: `${process.env.API_NAME} OK` }),
 );
 router.post('/user/login', postLoginUser);
 

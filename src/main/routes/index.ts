@@ -6,6 +6,11 @@ import {
   putUser,
   deleteUser,
   postLoginUser,
+  getTask,
+  getOneTask,
+  postTask,
+  putTask,
+  deleteTask,
 } from '../../controllers';
 
 const router = Router();
@@ -20,6 +25,11 @@ router.post('/user/login', postLoginUser);
 
 // routes private
 router.use(verifyToken);
+router.get('/task', getTask);
+router.get('/task/:id', getOneTask);
+router.post('/task', postTask);
+router.put('/task/:id', putTask);
+router.delete('/task/:id', deleteTask);
 
 // routes private with roles admin
 router.use(rolesAdmin);

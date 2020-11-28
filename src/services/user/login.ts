@@ -27,7 +27,7 @@ const login = async (data: IUser): Promise<string> => {
       message: 'Your account is locked.',
     });
 
-  return generateToken(data);
+  return generateToken(user);
 };
 
 export default login;

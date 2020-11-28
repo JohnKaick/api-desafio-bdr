@@ -1,6 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '..';
 import { ITask } from '../../interfaces';
+import User from './User';
 
 const Task = sequelize.define<ITask>(
   'Task',
@@ -42,5 +43,7 @@ const Task = sequelize.define<ITask>(
     tableName: 'task',
   },
 );
+
+Task.belongsTo(User, { as: 'user', foreignKey: 'user_id' });
 
 export default Task;

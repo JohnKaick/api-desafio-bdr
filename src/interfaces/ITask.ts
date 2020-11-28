@@ -8,6 +8,7 @@ interface ITask extends Model {
   startDate: Date | null;
   endDate: Date | null;
   responsible: string | null;
+  user_id: number;
 }
 
 export default ITask;

@@ -39,8 +39,17 @@
       }
     ],
     "@typescript-eslint/no-explicit-any": "off",
-    "no-param-reassign": 0
+    "no-param-reassign": 0,
+    "camelcase": ["error"]
   },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "rules": {
+        "camelcase": ["off"]
+      }
+    }
+  ],
   "settings": {
     "import/resolver": {
       "typescript": {}

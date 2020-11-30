@@ -2,7 +2,7 @@ import IUser from './IUser';
 
 interface IPerformanceUser {
   user: IUser;
-  count: {
+  countTask: {
     open: number;
     doing: number;
     finished: number;

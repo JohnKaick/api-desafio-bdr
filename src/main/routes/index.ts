@@ -13,6 +13,9 @@ import {
   deleteTask,
   performanceUser,
   taskFinished,
+  averageTask,
+  timeOpenToDoing,
+  timeDoingToFinished,
 } from '../../controllers';
 
 const router = Router();
@@ -34,7 +37,10 @@ router.put('/task/:id', putTask);
 router.delete('/task/:id', deleteTask);
 
 router.get('/report/performance-user', performanceUser);
-router.get('/report/task/finished', taskFinished);
+router.get('/report/task-finished', taskFinished);
+router.get('/report/average-task/:id', averageTask);
+router.get('/report/time-open-to-doing', timeOpenToDoing);
+router.get('/report/time-doing-to-finished', timeDoingToFinished);
 
 // routes private with roles admin
 router.use(rolesAdmin);

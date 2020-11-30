@@ -4,8 +4,6 @@ import { ITask } from '../../interfaces';
 
 const create = async (data: ITask): Promise<ITask> => {
   data.status = 'open';
-  data.startDate = null;
-  data.endDate = null;
 
   if (data?.responsible) {
     const user = await User.findOne({
@@ -20,7 +18,7 @@ const create = async (data: ITask): Promise<ITask> => {
   }
 
   try {
-    return Task.create(data);
+    return Task.create({ ...data, startDate: null, endDate: null });
   } catch (err) {
     throw new GeneralError({ message: err.message });
   }

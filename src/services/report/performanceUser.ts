@@ -73,7 +73,7 @@ const performanceUser = async (
 
     result.push({
       user,
-      count: {
+      countTask: {
         open: open.count,
         doing: doing.count,
         finished: finished.count,

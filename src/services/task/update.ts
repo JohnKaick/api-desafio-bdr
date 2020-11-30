@@ -13,7 +13,6 @@ const update = async (id: number, data: ITask): Promise<string> => {
 
   if (data.status === 'doing') {
     data.startDate = new Date();
-    data.endDate = null;
   }
 
   if (data.status === 'finished') {

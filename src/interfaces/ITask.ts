@@ -5,8 +5,8 @@ interface ITask extends Model {
   description: string;
   status: string;
   createDate: Date;
-  startDate: Date | null;
-  endDate: Date | null;
+  startDate: Date;
+  endDate: Date;
   responsible: string | null;
   user_id: number;
 }

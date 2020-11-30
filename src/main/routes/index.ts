@@ -11,6 +11,8 @@ import {
   postTask,
   putTask,
   deleteTask,
+  performanceUser,
+  taskFinished,
 } from '../../controllers';
 
 const router = Router();
@@ -30,6 +32,9 @@ router.get('/task/:id', getOneTask);
 router.post('/task', postTask);
 router.put('/task/:id', putTask);
 router.delete('/task/:id', deleteTask);
+
+router.get('/report/performance-user', performanceUser);
+router.get('/report/task/finished', taskFinished);
 
 // routes private with roles admin
 router.use(rolesAdmin);
